@@ -19,7 +19,7 @@
      * For full documentation on arguments, please refer to: https://github.com/ReduxFramework/ReduxFramework/wiki/Arguments
      * */
 
-    $theme = wp_get_theme(); // For use with some settings. Not necessary.
+
 
     $args = array(
         'opt_name' => 'at_news_scroller',
@@ -62,6 +62,7 @@
                 ),
             ),
         ),
+        'menu_icon' => 'dashicons-admin-customizer',
         'output' => TRUE,
         'output_tag' => TRUE,
         'cdn_check_time' => '1440',
@@ -85,9 +86,9 @@
         //'img'   => '', // You can use icon OR img. IMG needs to be a full URL.
     );
     $args['share_icons'][] = array(
-        'url'   => 'http://www.facebook.com/pages/Redux-Framework/243141545850368',
-        'title' => 'Our Website',
-        'icon'  => 'el el-website'
+        'url'   => 'http://abhashtech.com',
+        'title' => 'Visit our Website',
+        'icon'  => 'el el-globe-alt'
     );
 
     Redux::setArgs( $opt_name, $args );
