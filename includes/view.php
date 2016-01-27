@@ -75,7 +75,7 @@
         'use_cdn' => FALSE,
         'show_import_export'   => false,
         'dev_mode'             => false,
-        'footer_credit' => 'Made With <i class="el el-heart" style="color:rgb(255,0,0);"></i> by <a href="http://abhashtech.com">AbhashTech</a>',
+        'footer_credit' => 'Made With <i class="el el-heart" style="color:rgb(255,0,0);"></i> by <a href="http://abhashtech.com" target="_blank">AbhashTech</a>',
     );
 
     // SOCIAL ICONS -> Setup custom links in the footer for quick links in your panel footer icons.
