@@ -35,10 +35,10 @@
         'customizer' => FALSE,
         'default_mark' => '*',
         'hints' => array(
-            'icon' => 'el el-key',
-            'icon_position' => 'left',
-            'icon_color' => '#dd3333',
-            'icon_size' => 'large',
+            'icon' => 'el el-info-circle',
+            'icon_position' => 'right',
+            'icon_color' => '#0073AA',
+            
             'tip_style' => array(
                 'color' => 'dark',
                 'shadow' => '1',
@@ -97,13 +97,158 @@
      * ---> END ARGUMENTS
      */
 
-    
 
+//Speed related settings
+    Redux::setSection($opt_name, array( 
+                    'id'    => 'speed', 
+                    'title' => 'Set Speed & Options',
+                    'heading' => 'Setting this overrides default speed of Ticker',
+                    'icon' => 'el el-fast-forward', 
+                    'fields' =>  array(
+                        array(
+                            'id'            => 'opt-speed',
+                            'type'          => 'slider',
+                            'title'         => 'Select Scroller Speed',
+                            'subtitle'      => 'Select any speed between 0.01 to 1.00',
+                            'default'       => 0.15,
+                            'min'           => 0.01,
+                            'step'          => 0.01,
+                            'max'           => 1.00,
+                            'resolution'    => 0.01,
+                            'display_value' => 'text',
+                            'validate' => 'not_empty'
+                        ),
+                        array(
+                            'id'       => 'opt-categories',
+                            'type'     => 'select',
+                            'data'     => 'categories',
+                            'multi'    => true,
+                            'title'    => 'Select Categories from which Scrolling Data will be fetched from'
+                        ),
+                                    array(
+                            'id'       => 'opt-text',
+                            'type'     => 'text',
+                            'title'    => 'Title For Scrolling News',
+                            'default'  => 'Latest News',
+                            'validate' => 'not_empty'
+                        ))));
 
-    /*
-     *
-     * ---> START SECTIONS
-     *
-     */
+//UI related settings
+    Redux::setSection($opt_name,array( 
+                    'id'    => 'css', 
+                    'title' => 'Display Settings',
+                    'heading' => 'Setting this overrides default UI of Ticker',
+                    'icon' => 'el el-css', 
+                    'fields' =>  array(
 
-
+                        array(
+                            'id'       => 'scroll-height',
+                            'type'     => 'text',
+                            'title'    => 'Scrolling Area Height',
+                            'default'  => '28',
+                            'validate' => 'numeric'
+                        ),
+                        array(
+                            'id'       => 'scroll-gap',
+                            'type'     => 'text',
+                            'title'    => 'Gap Between Scrolling Text',
+                            'default'  => '50',
+                            'validate' => 'numeric'
+                        ),
+                        array(
+                            'id'       => 'title-bg',
+                            'type'     => 'color',
+                            'title'    => 'Title Background Color', 
+                            'subtitle' => 'Pick a background color for the scrolling area.',
+                            'default'  => '#F44A55',
+                            'validate' => 'color',
+                            'transparent' => false,
+                            'validate' => 'color'                            
+                        ),
+                        array(
+                            'id'       => 'title-text-color',
+                            'type'     => 'color',
+                            'title'    => 'Title Text Color', 
+                            'subtitle' => 'Pick a background color for the scrolling area.',
+                            'default'  => '#ffffff',
+                            'validate' => 'color',
+                            'transparent' => false,
+                            'validate' => 'color'    
+                            
+                        ),
+                        array(
+                            'id'       => 'title-text-size',
+                            'type'     => 'text',
+                            'title'    => 'Title Text Size',
+                            'default'  => '38',
+                            'validate' => 'numeric'
+                        ),
+                        array(
+                            'id'       => 'title-padding',
+                            'type'     => 'spacing',
+                            'output'   => array( '.at_scroll_title' ),
+                            'mode'     => 'padding',
+                            'all'      => false,
+                            'units'         => 'px',      // You can specify a unit value. Possible: px, em, %
+                            'units_extended'=> 'true',    // Allow users to select any type of unit
+                            'display_units' => 'true',   // Set to false to hide the units if the units are specified
+                            'title'    => 'Padding Title Text',
+                            'subtitle' => 'Padding is space inside the Title Text Box', 
+                            'desc'      => 'First Field is Spacing from Top, then from right, then from bottom and last field is spacing from left.',
+                            'default'  => array(
+                                'padding-top'    => '1px',
+                                'padding-right'  => '2px',
+                                'padding-bottom' => '3px',
+                                'padding-left'   => '4px'
+                            ),
+                              
+                         ),
+                        array(
+                            'id'       => 'scroll-color',
+                            'type'     => 'color',
+                            'title'    => 'Scrolling Area Background Color', 
+                            'subtitle' => 'Pick a background color for the scrolling area.',
+                            'default'  => '#333333',
+                            'validate' => 'color',
+                            'transparent' => false,
+                            'validate' => 'color'    
+                            
+                        ),
+                        array(
+                            'id'       => 'scroll-text-color',
+                            'type'     => 'color',
+                            'title'    => 'Scrolling Area Text Color', 
+                            'subtitle' => 'Pick a background color for the scrolling area.',
+                            'default'  => '#ffffff',
+                            'validate' => 'color',
+                            'transparent' => false,
+                            'validate' => 'color'    
+                            
+                        ),
+                        array(
+                            'id'       => 'scroll-text-size',
+                            'type'     => 'text',
+                            'title'    => 'Scrolling Text Size',
+                            'default'  => '28',
+                            'validate' => 'numeric'
+                        ),
+                        array(
+                            'id'       => 'scroll-padding',
+                            'type'     => 'spacing',
+                            'output'   => array( '.at_scroll_title' ),
+                            'mode'     => 'padding',
+                            'all'      => false,
+                            'units'         => 'px',      // You can specify a unit value. Possible: px, em, %
+                            'units_extended'=> 'true',    // Allow users to select any type of unit
+                            'display_units' => 'true',   // Set to false to hide the units if the units are specified
+                            'title'    => 'Padding Scrolling Text',
+                            'subtitle' => 'Padding is space inside the Title Text Box', 
+                            'desc'      => 'First Field is Spacing from Top, then from right, then from bottom and last field is spacing from left.',
+                            'default'  => array(
+                                'padding-top'    => '1px',
+                                'padding-right'  => '2px',
+                                'padding-bottom' => '3px',
+                                'padding-left'   => '4px'
+                            ),
+                            
+            ))));
