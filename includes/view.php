@@ -275,7 +275,7 @@ Redux::setSection($opt_name,array(
                     'id'    => 'Help', 
                     'title' => 'How to use?',
                     'heading' => 'How to use this plugin',
-                    'icon' => 'el el-help',
+                    'icon' => 'el el-info-circle',
                     'desc'    => 'To use this plugin with your theme add  <b>&lt;?php do_action(\'at_ticker_code\'); ?&gt;</b> to your code.<br />'
 
                     ));
