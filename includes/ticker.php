@@ -1,0 +1,33 @@
+<?php 
+if(! $at_news_scroller['opt-categories']){
+  $at_category = "0";
+}
+else{
+  $at_category = implode(',',$at_news_scroller['opt-categories'] ) ;
+}
+$args = array(
+    'numberposts' => $at_news_scroller['opt-post-count'],
+    'category' => $at_category
+    );
+$recent_posts = wp_get_recent_posts( $args );
+
+?>
+
+    <div id="at_scroll_container">
+      <div class="at_scroll_title at_scroll_title_right-arrow">Latest News</div>
+      <div class="at_scroll_div_content">
+        <div class="at_scroll_area">
+          <ul id="at_ticker">
+          <?php 
+
+          foreach( $recent_posts as $recent ){
+    echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+  }
+
+          ?>
+           
+            
+          </ul>
+        </div>
+      </div>
+    </div>

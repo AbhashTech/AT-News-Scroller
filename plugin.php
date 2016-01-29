@@ -19,9 +19,10 @@ if ( !class_exists( 'Redux' ) && file_exists( dirname(__FILE__) . '/includes/fra
 require_once( dirname(__FILE__) . '/includes/framework/redux/admin-init.php' );
 }
 
-// load the theme's options 
+// load the Plugin's Setting Page 
 if ( !isset( $at_news_scroller ) && file_exists( dirname(__FILE__) . '/includes/view.php' ) ) {
 require_once( dirname(__FILE__) . '/includes/view.php' );
 }
-
+//Load Functions file
+require_once(dirname(__FILE__) . '/includes/functions.php');
 ?>

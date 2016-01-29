@@ -152,15 +152,17 @@
                             'id'       => 'scroll-height',
                             'type'     => 'text',
                             'title'    => 'Scrolling Area Height',
-                            'default'  => '28',
-                            'validate' => 'numeric'
+                            'default'  => '38',
+                            'validate' => 'numeric',
+                            'compiler' => true,
                         ),
                         array(
                             'id'       => 'scroll-gap',
                             'type'     => 'text',
                             'title'    => 'Gap Between Scrolling Text',
                             'default'  => '50',
-                            'validate' => 'numeric'
+                            'validate' => 'numeric',
+                            'compiler' => true,
                         ),
                         array(
                             'id'       => 'title-bg',
@@ -170,7 +172,8 @@
                             'default'  => '#F44A55',
                             'validate' => 'color',
                             'transparent' => false,
-                            'validate' => 'color'                            
+                            'validate' => 'color',
+                            'compiler' => true,                           
                         ),
                         array(
                             'id'       => 'title-text-color',
@@ -180,15 +183,17 @@
                             'default'  => '#ffffff',
                             'validate' => 'color',
                             'transparent' => false,
-                            'validate' => 'color'    
+                            'validate' => 'color',
+                            'compiler' => true,    
                             
                         ),
                         array(
                             'id'       => 'title-text-size',
                             'type'     => 'text',
                             'title'    => 'Title Text Size',
-                            'default'  => '38',
-                            'validate' => 'numeric'
+                            'default'  => '18',
+                            'validate' => 'numeric',
+                            'compiler' => true,
                         ),
                         array(
                             'id'       => 'title-padding',
@@ -203,11 +208,12 @@
                             'subtitle' => 'Padding is space inside the Title Text Box', 
                             'desc'      => 'First Field is Spacing from Top, then from right, then from bottom and last field is spacing from left.',
                             'default'  => array(
-                                'padding-top'    => '1px',
-                                'padding-right'  => '2px',
-                                'padding-bottom' => '3px',
-                                'padding-left'   => '4px'
+                                'padding-top'    => '5px',
+                                'padding-right'  => '10px',
+                                'padding-bottom' => '5px',
+                                'padding-left'   => '10px'
                             ),
+                            'compiler' => true,
                               
                          ),
                         array(
@@ -218,7 +224,8 @@
                             'default'  => '#333333',
                             'validate' => 'color',
                             'transparent' => false,
-                            'validate' => 'color'    
+                            'validate' => 'color',
+                            'compiler' => true,    
                             
                         ),
                         array(
@@ -229,15 +236,17 @@
                             'default'  => '#ffffff',
                             'validate' => 'color',
                             'transparent' => false,
-                            'validate' => 'color'    
+                            'validate' => 'color',
+                            'compiler' => true,    
                             
                         ),
                         array(
                             'id'       => 'scroll-text-size',
                             'type'     => 'text',
                             'title'    => 'Scrolling Text Size',
-                            'default'  => '28',
-                            'validate' => 'numeric'
+                            'default'  => '12',
+                            'validate' => 'numeric',
+                            'compiler' => true,
                         ),
                         array(
                             'id'       => 'scroll-padding',
@@ -252,10 +261,23 @@
                             'subtitle' => 'Padding is space inside the Title Text Box', 
                             'desc'      => 'First Field is Spacing from Top, then from right, then from bottom and last field is spacing from left.',
                             'default'  => array(
-                                'padding-top'    => '1px',
-                                'padding-right'  => '2px',
-                                'padding-bottom' => '3px',
-                                'padding-left'   => '4px'
+                                'padding-top'    => '8px',
+                                'padding-right'  => '15px',
+                                'padding-bottom' => '5px',
+                                'padding-left'   => '15px'
                             ),
+                            'compiler' => true,
                             
             ))));
+
+//How to page
+Redux::setSection($opt_name,array( 
+                    'id'    => 'Help', 
+                    'title' => 'How to use?',
+                    'heading' => 'How to use this plugin',
+                    'icon' => 'el el-help',
+                    'desc'    => 'To use this plugin with your theme add  <b>&lt;?php do_action(\'at_ticker_code\'); ?&gt;</b> to your code.<br />'
+
+                    ));
+
+add_filter('redux/options/' . $opt_name . '/compiler', 'at_scroll_plugin_compiler_file', 10, 3);
