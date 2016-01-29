@@ -131,6 +131,13 @@
                             'title'    => 'Title For Scrolling News',
                             'default'  => 'Latest News',
                             'validate' => 'not_empty'
+                        ),
+                        array(
+                            'id'       => 'opt-post-count',
+                            'type'     => 'text',
+                            'title'    => 'Number of Posts to show',
+                            'default'  => '10',
+                            'validate' => 'numeric'
                         ))));
 
 //UI related settings
