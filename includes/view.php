@@ -116,7 +116,8 @@
                             'max'           => 1.00,
                             'resolution'    => 0.01,
                             'display_value' => 'text',
-                            'validate' => 'not_empty'
+                            'validate' => 'not_empty',
+                            'compiler' => true,
                         ),
                         array(
                             'id'       => 'opt-categories',
@@ -130,7 +131,8 @@
                             'type'     => 'text',
                             'title'    => 'Title For Scrolling News',
                             'default'  => 'Latest News',
-                            'validate' => 'not_empty'
+                            'validate' => 'not_empty',                            
+                            'compiler' => true,
                         ),
                         array(
                             'id'       => 'opt-post-count',

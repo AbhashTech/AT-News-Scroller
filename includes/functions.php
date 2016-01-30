@@ -2,13 +2,17 @@
 
         function at_scroll_plugin_compiler_file( $options, $css, $changed_values ) {
 		    global $wp_filesystem;
-		    $filename = dirname(__FILE__) . '/../style/style.css';
+		    $file_css = dirname(__FILE__) . '/../style/style.css';
+		    $file_js = dirname(__FILE__) . '/../js/init.js';
 		    $data = $options;
 		    ob_start(); // Capture all output (output buffering)
-
 			require('style.php'); // Generate CSS
+			$css_file_content = ob_get_clean(); // Get generated CSS (output buffering)
+		 	ob_end_flush();
 
-			$cssa = ob_get_clean(); // Get generated CSS (output buffering)
+		 	ob_start(); // Capture all output (output buffering)
+			require('init.js.php'); // Generate js
+			$js_file_content = ob_get_clean(); // Get generated js (output buffering)
 		 	ob_end_flush();
 
 		    if( empty( $wp_filesystem ) ) {
@@ -18,11 +22,8 @@
 		    }
 		 
 		    if( $wp_filesystem ) {
-		        $wp_filesystem->put_contents(
-		            $filename,
-		            $cssa,
-		            FS_CHMOD_FILE // predefined mode settings for WP files
-		        );
+		        $wp_filesystem->put_contents($file_css,$css_file_content,FS_CHMOD_FILE );
+		        $wp_filesystem->put_contents($file_js,$js_file_content,FS_CHMOD_FILE );
 		    }
         }
 
@@ -31,15 +32,7 @@
 add_action( 'at_ticker_code', 'at_scroll_plugin_mod' );
 function at_scroll_plugin_mod() {
   	global $at_news_scroller;
-	$get_option_speed = $at_news_scroller['opt-speed']; 
-	
-?>
-		<script>
-			var speed = <?php echo $get_option_speed; ?>;
-		</script>
-<?php
-	
-	require_once(dirname(__FILE__)."/ticker.php");
+  	require_once(dirname(__FILE__)."/ticker.php");
 }
 
 define('AT_NEWS_PLUGIN_URL',  plugin_dir_url(__FILE__) );   

@@ -67,6 +67,8 @@ li:before {
 .at_scroll_div_content {
     overflow: hidden;
     background: <?php echo $data['scroll-color']; ?>;
+}
+.at_scroll_div_content a {
     color: <?php echo $data['scroll-text-color']; ?>;
 }
 
@@ -88,5 +90,5 @@ li:before {
     border-top: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid #f44a55;
+    border-left: 10px solid <?php echo $data['title-bg']; ?>;
 }

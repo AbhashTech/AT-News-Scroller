@@ -14,14 +14,20 @@ $recent_posts = wp_get_recent_posts( $args );
 ?>
 
     <div id="at_scroll_container">
-      <div class="at_scroll_title at_scroll_title_right-arrow">Latest News</div>
+      <div class="at_scroll_title at_scroll_title_right-arrow" id="at_scroll_text">Latest News</div>
       <div class="at_scroll_div_content">
         <div class="at_scroll_area">
           <ul id="at_ticker">
           <?php 
 
           foreach( $recent_posts as $recent ){
-    echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $recent["post_title"].'</a> </li> ';
+            if ($recent["post_title"] == ""){
+              $title_post = get_permalink($recent["ID"]);
+            }
+            else {
+               $title_post = $recent["post_title"];
+            }
+    echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $title_post.'</a> </li> ';
   }
 
           ?>

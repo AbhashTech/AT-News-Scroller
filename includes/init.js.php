@@ -11,8 +11,8 @@
  * jQuery v1.2.x or later
  * 
  */
-var AtScrollSpeed = "0.15";
-var AtScrollText = "Latest News";
+var AtScrollSpeed = "<?php echo $data['opt-speed']; ?>";
+var AtScrollText = "<?php echo $data['opt-text']; ?>";
 
 jQuery.fn.liScroll = function(settings) {
         settings = jQuery.extend({
