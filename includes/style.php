@@ -1,4 +1,3 @@
-/* liScroll styles */
 .tickercontainer {
     width: 100%;
     margin: 0;
@@ -12,16 +11,11 @@
     /* that serves as a mask. so you get a sort of padding both left and right */
     position: relative;
     overflow: hidden;
-
     padding: <?php echo $data['scroll-padding']['padding-top']; ?> 0px <?php echo $data['scroll-padding']['padding-bottom']; ?> 0px !important;
     margin: 0px <?php echo $data['scroll-padding']['padding-right']; ?> 0px <?php echo $data['scroll-padding']['padding-left']; ?> ;
-    font-size: <?php echo $data['scroll-text-size']; ?>px;
-    font-weight: bold;
-}
+   }
 
 ul.newsticker {
-
-    /* that's your list */
     position: relative;
     left: 100%;
     list-style-type: none;
@@ -30,13 +24,16 @@ ul.newsticker {
 }
 
 ul.newsticker li {
-    float: left; /* important: display inline gives incorrect results when you check for elem's width */
+    float: left;
     margin-left: <?php echo $data['scroll-gap']; ?>px;
+    font-size: <?php echo $data['scroll-text-size']; ?>px;
+    font-weight: bold;
 }
 
-li:before {
+ul.newsticker li:before {
     content: "»";
     margin-right: 10px;
+
 }
 
 .at_scroll_area {
@@ -48,8 +45,7 @@ li:before {
 }
 
 .at_scroll_content {
-    left: 100%;
-    
+    left: 100%;    
     height: <?php echo $data['scroll-height']; ?>px;
     position: relative;
 }
@@ -68,6 +64,7 @@ li:before {
     overflow: hidden;
     background: <?php echo $data['scroll-color']; ?>;
 }
+
 .at_scroll_div_content a {
     color: <?php echo $data['scroll-text-color']; ?>;
 }
