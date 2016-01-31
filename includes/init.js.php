@@ -23,7 +23,7 @@ jQuery.fn.liScroll = function(settings) {
                 $strip.addClass("newsticker")
                 var stripWidth = 1;
                 $strip.find("li").each(function(i){
-                stripWidth += jQuery(this, i).outerWidth(true); // thanks to Michael Haszprunar and Fabien Volpi
+                stripWidth += jQuery(this, i).outerWidth(true)+<?php echo $data['scroll-gap']; ?>; // thanks to Michael Haszprunar and Fabien Volpi
                 });
                 var $mask = $strip.wrap("<div class='mask'></div>");
                 var $tickercontainer = $strip.parent().wrap("<div class='tickercontainer'></div>");                             

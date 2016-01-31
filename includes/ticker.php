@@ -27,7 +27,7 @@ $recent_posts = wp_get_recent_posts( $args );
             else {
                $title_post = $recent["post_title"];
             }
-    echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   $title_post.'</a> </li> ';
+    echo '<li class="at-news-ticker-li"><a href="' . get_permalink($recent["ID"]) . '">' .   $title_post.'</a> </li> ';
   }
 
           ?>
