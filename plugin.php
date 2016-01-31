@@ -15,7 +15,7 @@ die("Ouch! You should not have called me like this!");
 }
 
 // Check if Redux plugin is active or not. If not active run it as framework
-if ( !class_exists( 'Redux' ) && file_exists( dirname(__FILE__) . '/includes/framework/redux/admin-init.php' ) ) {
+if ( (!class_exists( 'Redux' ) && !class_exists( 'ReduxFramework' )) && file_exists( dirname(__FILE__) . '/includes/framework/redux/admin-init.php' ) ) {
 require_once( dirname(__FILE__) . '/includes/framework/redux/admin-init.php' );
 }
 
