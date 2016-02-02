@@ -14,9 +14,14 @@ if ( ! defined( 'WPINC' ) ) {
 die("Ouch! You should not have called me like this!");
 }
 
-// Check if Redux plugin is active or not. If not active run it as framework
-if ( (!class_exists( 'Redux' ) && !class_exists( 'ReduxFramework' )) && file_exists( dirname(__FILE__) . '/includes/framework/redux/admin-init.php' ) ) {
-require_once( dirname(__FILE__) . '/includes/framework/redux/admin-init.php' );
+// TGM Class to check if Redux Framework is Installed or not, if not nag user to install Redux Plugin
+if ( file_exists( dirname( __FILE__ ) . '/includes/tgm/tgm-init.php' ) ) {
+    require_once dirname( __FILE__ ) . '/includes/tgm/tgm-init.php';
+}
+
+// Show option panel only if redux Plugin is installed
+if ( class_exists( 'Redux' )  && file_exists( dirname(__FILE__) . '/includes/extensions/extensions-init.php' ) ) {
+require_once( dirname(__FILE__) . '/includes/extensions/extensions-init.php' );
 }
 
 // load the Plugin's Setting Page 
