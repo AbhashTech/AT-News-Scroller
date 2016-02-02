@@ -24,7 +24,7 @@
     $args = array(
         'opt_name' => 'at_news_scroller',
         'display_name' => 'AT News Scroller',
-        'display_version' => '0.01',
+        'display_version' => '0.2',
         'page_slug' => 'at-news-scroller',
         'page_title' => 'AT Scroll Settings',
         'update_notice' => TRUE,

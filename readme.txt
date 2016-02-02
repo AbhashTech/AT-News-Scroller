@@ -22,8 +22,31 @@ This is a simple plugin which pull latest posts as scroll. There is option to se
 4. Use Plugin `<?php do_action('at_ticker_code');  ?>` code anywhere in your theme.
 
 
+== Frequently Asked Questions ==
+
+= Why I'm unable to see Scroller Setting Page? =
+You need to install <a href="https://wordpress.org/plugins/redux-framework/">Redux Framework Plugin</a> 
+
 
 == Changelog ==
 
+= 0.2 =
+* Removed Inbuilt Jquery File
+* Removed Inbuilt Redux Framework
+*Some CSS and JS enhancement
+
+
 = 0.01 =
 * Plugin Created
+
+
+== Upgrade Notice ==
+
+See : https://github.com/AbhashTech/AT-News-Scroller/commits/master
+
+
+== Screenshots ==
+1. **Plugin In Action** - Plugin In action on Twenty Sixteen Theme
+2. **Plugin In Action** - Plugin In action on another theme
+3. **Display Setting** - Various setting fou UI customization
+4. **Plugin Options** - Various option like setting speed, Text and choose number of post and Post category to show from 
