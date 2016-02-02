@@ -13,6 +13,7 @@
  */
 var AtScrollSpeed = "<?php echo $data['opt-speed']; ?>";
 var AtScrollText = "<?php echo $data['opt-text']; ?>";
+var $ = jQuery.noConflict();
 
 jQuery.fn.liScroll = function(settings) {
         settings = jQuery.extend({

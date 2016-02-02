@@ -40,9 +40,7 @@ define('CSS_URL', AT_NEWS_PLUGIN_URL . '../style/style.css');
 // Add header hook for user to load css by plugin
 add_action('wp_head','hook_css');
 function hook_css() {
-	  	echo  "<link rel='stylesheet' href='". CSS_URL ."' type='text/css' media='all' />". "\n" ;	  
-	  	wp_register_script( 'at_ticker_jquery_js', AT_NEWS_PLUGIN_URL."../js/jquery-2.1.1.min.js" ,array('jquery'),"2.1.1",true);
-	  	wp_enqueue_script( 'at_ticker_jquery_js');	
+	  	echo  "<link rel='stylesheet' href='". CSS_URL ."' type='text/css' media='all' />". "\n" ;
 		wp_register_script( 'at_ticker_init_js', AT_NEWS_PLUGIN_URL."../js/init.js" ,array('jquery'),"2.1.1",true);
   		wp_enqueue_script( 'at_ticker_init_js');
 }

@@ -13,6 +13,7 @@
  */
 var AtScrollSpeed = "0.15";
 var AtScrollText = "Latest News";
+var $ = jQuery.noConflict();
 
 jQuery.fn.liScroll = function(settings) {
         settings = jQuery.extend({
