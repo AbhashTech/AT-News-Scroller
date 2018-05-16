@@ -3,7 +3,7 @@ Contributors: AbhashTech
 Author URI: http://abhashtech.com
 Tags: ticker, news, scroll, latest post scroller
 Requires at least: 3.7
-Tested up to: 4.4.1
+Tested up to: 4.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: trunk
