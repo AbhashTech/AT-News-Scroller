@@ -44,4 +44,6 @@ function hook_css() {
 		wp_register_script( 'at_ticker_init_js', AT_NEWS_PLUGIN_URL."../js/init.js" ,array('jquery'),"2.1.1",true);
   		wp_enqueue_script( 'at_ticker_init_js');
 }
+
+add_shortcode('at-scroll-code', 'at_scroll_plugin_mod'); // [at-scroll-code]
 ?>
