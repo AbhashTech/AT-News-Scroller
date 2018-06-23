@@ -31,7 +31,7 @@ $recent_posts = wp_get_recent_posts( $args );
   }
 
           ?>
-           
+           <li class="at-news-ticker-li">&nbsp;</li>
             
           </ul>
         </div>

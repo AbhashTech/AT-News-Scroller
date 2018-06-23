@@ -278,7 +278,7 @@ Redux::setSection($opt_name,array(
                     'title' => 'How to use?',
                     'heading' => 'How to use this plugin',
                     'icon' => 'el el-info-circle',
-                    'desc'    => 'To use this plugin with your theme add  <b>&lt;?php do_action(\'at_ticker_code\'); ?&gt;</b> to your code.<br />'
+                    'desc'    => 'To use this plugin with your theme add  <b>&lt;?php do_action(\'at_ticker_code\'); ?&gt;</b> to your code.<br /> or use [at-scroll-code]  shortcode'
 
                     ));
 
