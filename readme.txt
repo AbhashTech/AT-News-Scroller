@@ -6,7 +6,7 @@ Requires at least: 3.7
 Tested up to: 4.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 0.3
+Stable tag: 0.4
 
 A simple plugin to pull latest post from certain category as News ticker.
 
@@ -29,6 +29,9 @@ You need to install <a href="https://wordpress.org/plugins/redux-framework/">Red
 
 
 == Changelog ==
+
+= 0.4 =
+* Bug fixes
 
 = 0.3 =
 * Added Shortcode
