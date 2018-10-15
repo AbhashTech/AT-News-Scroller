@@ -3,7 +3,7 @@
 * Plugin Name: AT News Scroller
 * Plugin URI: http://abhashtech.com
 * Description: Scroll latest post from certain category.
-* Version: 0.3
+* Version: 0.4
 * Author: AbhashTech
 * Author URI: http://abhashtech.com
 */
