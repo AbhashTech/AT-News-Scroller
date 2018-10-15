@@ -58,5 +58,8 @@ jQuery.fn.liScroll = function(settings) {
     });
 
 
-    // Change Text
-    document.getElementById("at_scroll_text").innerHTML = AtScrollText; 
+      // Change Text if it exists
+    
+    if (document.getElementById('at_scroll_text') !=null ){
+          document.getElementById("at_scroll_text").innerHTML = AtScrollText; 
+    }
