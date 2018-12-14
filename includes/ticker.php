@@ -7,7 +7,8 @@ else{
 }
 $args = array(
     'numberposts' => $at_news_scroller['opt-post-count'],
-    'category' => $at_category
+    'category' => $at_category,
+	  'post_status' => 'publish',
     );
 $recent_posts = wp_get_recent_posts( $args );
 
